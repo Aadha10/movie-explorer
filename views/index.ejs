@@ -1,0 +1,66 @@
+<div class="container">
+  <h1>Movie Explorer</h1>
+  <form action="/search" method="POST">
+    <input
+      type="text"
+      name="searchTerm"
+      placeholder="Search for a movie by Title"
+      required
+    />
+    <button type="submit">Search</button>
+  </form>
+  <div class="movies-grid">
+    <% movies.forEach(movie => { %>
+    <div
+      class="movie-box"
+      data-title="<%= movie.Title %>"
+      data-year="<%= movie.Year %>"
+      data-poster="<%= movie.Poster %>"
+      data-plot="<%= movie.Plot %>"
+      data-rated="<%= movie.Rated %>"
+      data-released="<%= movie.Released %>"
+      data-runtime="<%= movie.Runtime %>"
+      data-genre="<%= movie.Genre %>"
+      data-director="<%= movie.Director %>"
+      data-writer="<%= movie.Writer %>"
+      data-actors="<%= movie.Actors %>"
+      data-language="<%= movie.Language %>"
+      data-country="<%= movie.Country %>"
+      data-awards="<%= movie.Awards %>"
+      data-imdbRating="<%= movie.imdbRating %>"
+      data-imdbVotes="<%= movie.imdbVotes %>"
+    >
+      <img src="<%= movie.Poster %>" alt="<%= movie.Title %>" />
+      <h3><%= movie.Title %></h3>
+      <p><%= movie.Year %></p>
+      <div class="movie-details">
+        <p><strong>Plot:</strong> <%= movie.Plot %></p>
+        <p><strong>Rated:</strong> <%= movie.Rated %></p>
+        <p><strong>Director:</strong> <%= movie.Director %></p>
+        <p><strong>IMDb Rating:</strong> <%= movie.imdbRating %></p>
+        <p><strong>IMDb Votes:</strong> <%= movie.imdbVotes %></p>
+        <button class="review-button">Add Review</button>
+        <div class="review-form" style="display: none">
+          <form class="review-form" data-movieid="<%= movie.imdbID %>">
+            <label for="rating">User Rating:</label>
+            <input type="number" name="rating" min="1" max="5" required />
+            <br />
+            <label for="comment">User Comment:</label>
+            <textarea name="comment" required></textarea>
+            <br />
+            <button type="submit">Submit Review</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>
+<div id="movie-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modal-title"></h2>
+    <img id="modal-poster" src="" alt="" />
+    <p id="modal-synopsis"></p>
+  </div>
+</div>

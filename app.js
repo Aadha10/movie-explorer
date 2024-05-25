@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 
 mongoose
   .connect(
-    "mongodb+srv://wopocin930:a6ekOptbHOXi2JJe@cluster0.sd7u3ug.mongodb.net/sessions",
+    "mongodb+srv://<username>:<password>@cluster0.sd7u3ug.mongodb.net/<dbname>",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -25,7 +25,7 @@ mongoose
     console.log("Failed to connect", error);
   });
 const store = new mongodbSession({
-  uri: "mongodb+srv://wopocin930:a6ekOptbHOXi2JJe@cluster0.sd7u3ug.mongodb.net/sessions",
+  uri: "mongodb+srv://<username>:<password>@cluster0.sd7u3ug.mongodb.net/<dbname>",
   collection: "sessions",
 });
 
@@ -42,7 +42,7 @@ app.use(
   })
 );
 
-const API_KEY = "40c49d56";
+const API_KEY = "your_api_key";
 
 app.get("/", (req, res) => {
   res.redirect("/landing");

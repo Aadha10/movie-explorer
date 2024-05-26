@@ -13,7 +13,7 @@ MovieBuzz is an movie explorer app that is used to search Movie Details by their
 - Node.js, Express.js, MongoDB (mongoose)
 
 ## Deployment
-You can check out the Website at https://movie-explorer-lrh9y1wr8-devils-projects-d5d06652.vercel.app/landing
-You can create a new account or use existing login
-Email: admin@gmail.com
-Pass: q1w2
+- You can check out the Website at https://movie-explorer-lrh9y1wr8-devils-projects-d5d06652.vercel.app/landing
+- You can create a new account or use existing login
+- Email: admin@gmail.com
+- Pass: q1w2
